@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Suplementos de Papá ❤️ - Mi Plan Claro y Fácil</title>
+<meta name="description" content="Plan claro y fácil de suplementos para Papá: beneficios, dosis, evidencia honesta y precauciones, con horario semanal y opción de imprimir.">
+<meta name="theme-color" content="#FBF8F1">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          cream:   '#FBF8F1',
+          paper:   '#FEFCF7',
+          ink:     '#36474F',
+          inksoft: '#5C6B72',
+          blue:    { soft: '#6FA8C7', deep: '#3E7E9C', tint: '#E5F0F6' },
+          mint:    { soft: '#8FD0B6', deep: '#4E9E80', tint: '#E4F4EC' },
+          gold:    { soft: '#E0B14C', deep: '#B8893A', tint: '#FAF1DC' },
+          coral:   { DEFAULT: '#DB6A57', deep: '#C75944', tint: '#FBE9E5' },
+          slate:   { soft: '#7E9AA6', tint: '#EAF0F2' },
+        },
+        fontFamily: {
+          display: ['Fraunces', 'Georgia', 'serif'],
+          body:    ['Nunito', 'system-ui', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { background: #FBF8F1; }
+
+  /* Suave aparición de las tarjetas */
+  @keyframes floatUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+  .floatUp { opacity: 0; animation: floatUp .6s cubic-bezier(.2,.7,.2,1) forwards; }
+
+  /* Latido suave del corazón del encabezado */
+  @keyframes breathe { 0%,100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+  .breathe { animation: breathe 4s ease-in-out infinite; transform-origin: center; }
+
+  /* Entrada del modal */
+  @keyframes modalIn { from { opacity: 0; transform: translateY(24px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+  .modalIn { animation: modalIn .35s cubic-bezier(.2,.7,.2,1) forwards; }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .fadeIn { animation: fadeIn .25s ease forwards; }
+
+  /* Resalte claro al cambiar de pestaña, para que se note el cambio */
+  @keyframes tabReveal { 0% { opacity: 0; transform: translateY(12px); } 100% { opacity: 1; transform: translateY(0); } }
+  .tabReveal { animation: tabReveal .32s cubic-bezier(.2,.7,.2,1); }
+
+  .press { transition: transform .12s ease, box-shadow .2s ease, background-color .2s ease; }
+  .press:active { transform: scale(.96); }
+
+  .card-hover { transition: transform .25s ease, box-shadow .25s ease; }
+  .card-hover:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -18px rgba(54,71,79,.35); }
+
+  :focus-visible { outline: 3px solid #3E7E9C; outline-offset: 3px; border-radius: 10px; }
+
+  .tab-active { background: #36474F; color: #fff; }
+
+  /* Hojas de impresión: ocultas en pantalla */
+  #printSchedule, #printFull { display: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .floatUp, .breathe, .modalIn, .fadeIn, .tabReveal { animation: none !important; opacity: 1 !important; transform: none !important; }
+    html { scroll-behavior: auto; }
+  }
+
+  @media print {
+    @page { margin: 13mm; }
+    .no-print { display: none !important; }
+    #app { display: none !important; }
+    #modal { display: none !important; }
+    #printSchedule, #printFull { display: none !important; }
+    body.print-full #printFull { display: block !important; }
+    body:not(.print-full) #printSchedule { display: block !important; }
+    body { background: #fff; }
+    #printSchedule, #printSchedule *, #printFull, #printFull * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    #printSchedule, #printFull { font-size: 13px; line-height: 1.45; color: #36474F; }
+  }
+</style>
+<meta property="og:title" content="Suplementos de Papá"><meta property="og:description" content="Plan claro y fácil: qué tomar, cuándo, dosis y precauciones. Hecho con cariño."><meta property="og:type" content="website"><meta property="og:locale" content="es_MX"><meta name="twitter:card" content="summary"><link rel="manifest" href="data:application/json,%7B%22name%22%3A%22Suplementos%20de%20Pap%C3%A1%22%2C%22short_name%22%3A%22Suplementos%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23FBF8F1%22%2C%22theme_color%22%3A%22%23FBF8F1%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage%2Fsvg%2Bxml%2C%253Csvg%2520xmlns%253D%2522http%253A%252F%252Fwww.w3.org%252F2000%252Fsvg%2522%2520viewBox%253D%25220%25200%2520512%2520512%2522%253E%253Crect%2520width%253D%2522512%2522%2520height%253D%2522512%2522%2520rx%253D%252296%2522%2520fill%253D%2522%2523FBF8F1%2522%252F%253E%253Cpath%2520d%253D%2522M256%2520432S88%2520320%252088%2520208c0-52%252042-88%252088-88%252034%25200%252058%252018%252080%252046%252022-28%252046-46%252080-46%252046%25200%252088%252036%252088%252088%25200%2520112-168%2520224-168%2520224z%2522%2520fill%253D%2522%2523C15A38%2522%252F%253E%253C%252Fsvg%253E%22%2C%22sizes%22%3A%22any%22%2C%22type%22%3A%22image%2Fsvg%2Bxml%22%2C%22purpose%22%3A%22any%22%7D%5D%7D"><link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20512%22%3E%3Crect%20width%3D%22512%22%20height%3D%22512%22%20rx%3D%2296%22%20fill%3D%22%23FBF8F1%22%2F%3E%3Cpath%20d%3D%22M256%20432S88%20320%2088%20208c0-52%2042-88%2088-88%2034%200%2058%2018%2080%2046%2022-28%2046-46%2080-46%2046%200%2088%2036%2088%2088%200%20112-168%20224-168%20224z%22%20fill%3D%22%23C15A38%22%2F%3E%3C%2Fsvg%3E"><style id="upgrade-css">#fsCtl{position:fixed;top:10px;right:10px;z-index:9999;display:flex;gap:4px;background:rgba(255,255,255,.92);border:1px solid #d8cdb8;border-radius:999px;padding:4px;box-shadow:0 2px 8px rgba(0,0,0,.12)}#fsCtl button{border:0;background:transparent;color:#6b3a24;font-weight:800;min-width:40px;min-height:40px;border-radius:999px;cursor:pointer;font-family:inherit}#fsCtl button:nth-child(2){font-size:19px}#fsCtl button:nth-child(3){font-size:22px}#fsCtl button.on{background:#C15A38;color:#fff}#ttsBtn{display:inline-flex;align-items:center;gap:8px;margin:14px auto 4px;padding:12px 20px;min-height:48px;border:0;border-radius:999px;background:#7a2f19;color:#fff;font-weight:800;font-size:17px;cursor:pointer;font-family:inherit}#hoyView{margin:8px 16px 26px;background:#fff;border:2px solid #eaddc6;border-radius:22px;padding:18px 16px 20px;box-shadow:0 6px 20px rgba(120,70,40,.08)}.hoyHead{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}.hoyKicker{color:#7a2f19;font-weight:800;letter-spacing:.12em;font-size:12px}.hoyTitle{font-family:Fraunces,serif;color:#2a1c12;font-size:26px;margin:2px 0 0;line-height:1.1}#hoyReset{border:1px solid #d8cdb8;background:#fff;color:#7a2f19;font-weight:700;border-radius:999px;padding:8px 14px;min-height:40px;cursor:pointer;font-family:inherit;white-space:nowrap}.hoyProg{display:flex;align-items:center;gap:10px;margin:12px 0 6px}.hoyBar{flex:1;height:12px;background:#efe6d5;border-radius:999px;overflow:hidden}.hoyBar>span{display:block;height:100%;width:0;background:#4a8f5b;transition:width .25s}#hoyCount{color:#3a2a1c;font-weight:800;font-size:15px;white-space:nowrap}.hoyGroup{margin-top:16px}.hoyGT{font-weight:800;color:#2a1c12;font-size:18px}.hoyGS{color:#5b4a38;font-size:14px;margin-bottom:6px}.hoyRow{display:flex;align-items:center;gap:14px;padding:14px 12px;margin:8px 0;background:#fbf7ee;border:1.5px solid #ecdfc7;border-radius:16px;cursor:pointer;min-height:56px;user-select:none;-webkit-tap-highlight-color:transparent}.hoyRow:active{transform:scale(.99)}.hoyCk{flex:0 0 auto;width:30px;height:30px;border-radius:50%;border:3px solid #c9b48c;background:#fff;position:relative}.hoyRow.done{background:#eef6ee;border-color:#8bc199}.hoyRow.done .hoyCk{background:#4a8f5b;border-color:#4a8f5b}.hoyRow.done .hoyCk:after{content:"";position:absolute;left:9px;top:4px;width:7px;height:14px;border:solid #fff;border-width:0 4px 4px 0;transform:rotate(45deg)}.hoyRow.done .hoyName{text-decoration:line-through;color:#5b6b5b}.hoyTxt{display:flex;flex-direction:column;flex:1}.hoyName{font-weight:800;color:#241811;font-size:18px;line-height:1.2}.hoyWhy{color:#4a3826;font-size:14px;margin-top:2px}.hoyBadge{flex:0 0 auto;background:#7a2f19;color:#fff;font-weight:800;font-size:12px;padding:5px 10px;border-radius:999px}.hoyNone{color:#3a2a1c;font-size:15px;padding:10px 4px}.hoyCal{margin-top:14px;color:#3a2a1c}.hoyCal summary{cursor:pointer;font-weight:700;color:#7a2f19;font-size:15px}.hoyCal ul{margin:8px 0 0 18px}.hoyCal li{margin:4px 0;font-size:15px}.upg-docbtn{background:#7a2f19 !important;color:#fff !important}#printDoctor{display:none}@media print{  body.print-doctor #app,body.print-doctor #printSchedule,body.print-doctor #printFull,body.print-doctor #fsCtl,body.print-doctor #modal{display:none !important}  body.print-doctor #printDoctor{display:block !important;color:#000;font-family:Arial,Helvetica,sans-serif}  body.print-doctor #printDoctor h1{font-size:22px;margin:0 0 4px}  body.print-doctor #printDoctor .pdSub{font-size:12px;margin:0 0 8px}  body.print-doctor #printDoctor .pdNote{font-size:11px;border:1px solid #000;padding:6px;margin:0 0 10px}  body.print-doctor #printDoctor table{width:100%;border-collapse:collapse;font-size:11px}  body.print-doctor #printDoctor th,body.print-doctor #printDoctor td{border:1px solid #000;padding:5px 6px;text-align:left;vertical-align:top}  body.print-doctor #printDoctor th{background:#eee}  body.print-doctor #printDoctor .pdFoot{font-size:10px;margin-top:8px;font-style:italic}  #fsCtl{display:none}}</style>
+</head>
+
+<body class="font-body text-ink antialiased">
+
+<!-- ====================== APP (pantalla) ====================== -->
+<div id="app">
+
+  <!-- Encabezado -->
+  <header class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-tint via-cream to-mint-tint"></div>
+    <div class="absolute -top-24 -right-20 w-80 h-80 rounded-full bg-mint-soft/25 blur-3xl"></div>
+    <div class="absolute -bottom-28 -left-16 w-80 h-80 rounded-full bg-blue-soft/25 blur-3xl"></div>
+
+    <div class="relative max-w-4xl mx-auto px-5 pt-10 pb-8 text-center">
+      <div class="breathe inline-flex items-center justify-center w-24 h-24 rounded-full bg-white shadow-lg mb-5">
+        <svg viewBox="0 0 24 24" class="w-12 h-12" fill="#DB6A57"><path d="M12 21s-7.5-4.8-10-9.2C.4 8.6 2 5 5.3 5c1.9 0 3.3 1 3.7 1.7C9.4 6 10.8 5 12.7 5 16 5 17.6 8.6 16 11.8 13.5 16.2 12 21 12 21z"/></svg>
+      </div>
+      <p class="font-body font-700 tracking-wide text-mint-deep mb-2">PARA MI PAPÁ, CON TODO EL CARIÑO</p>
+      <h1 class="font-display font-600 text-4xl sm:text-5xl md:text-6xl leading-tight text-ink">
+        Suplementos de Papá <span class="inline-block">❤️</span>
+      </h1>
+      <p class="font-display italic text-2xl sm:text-3xl text-blue-deep mt-2">Mi plan claro y fácil</p>
+
+      <p class="max-w-xl mx-auto mt-5 text-lg text-inksoft">
+        Una lista sencilla de lo que estás tomando, para qué te sirve a ti, y cómo tomarlo con tranquilidad.
+      </p>
+
+      <button onclick="document.getElementById('aviso').scrollIntoView({behavior:'smooth'})"
+        class="press no-print mt-7 inline-flex items-center gap-3 bg-coral hover:bg-coral-deep text-white font-700 text-lg sm:text-xl px-7 py-5 rounded-2xl shadow-lg">
+        <span class="text-2xl">⚠️</span>
+        <span class="text-left leading-snug">Importante: esto es información resumida.<br class="hidden sm:block"> Siempre consulta primero con tu doctor.</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Barra de navegación -->
+  <nav class="no-print sticky top-0 z-30 bg-cream/90 backdrop-blur border-b border-black/5">
+    <div class="max-w-5xl mx-auto px-3 py-3 flex flex-wrap items-center justify-center gap-2">
+      <button data-filter="todos"        onclick="setFilter('todos', this)"        class="filter-btn press tab-active px-5 py-3 rounded-full font-700 text-base">📋 Todos</button>
+      <button data-filter="ojos"         onclick="setFilter('ojos', this)"         class="filter-btn press bg-white text-ink px-5 py-3 rounded-full font-700 text-base shadow-sm">👁️ Ojos</button>
+      <button data-filter="pulmones"     onclick="setFilter('pulmones', this)"     class="filter-btn press bg-white text-ink px-5 py-3 rounded-full font-700 text-base shadow-sm">🫁 Pulmones</button>
+      <button data-filter="energia"      onclick="setFilter('energia', this)"      class="filter-btn press bg-white text-ink px-5 py-3 rounded-full font-700 text-base shadow-sm">⚡ Energía</button>
+      <button data-filter="interacciones" onclick="setFilter('interacciones', this)" class="filter-btn press bg-white text-ink px-5 py-3 rounded-full font-700 text-base shadow-sm">🔔 Interacciones</button>
+      <button onclick="imprimirHorario()" class="press bg-blue-deep text-white px-5 py-3 rounded-full font-700 text-base shadow-sm">🖨️ Imprimir horario</button>
+    </div>
+  </nav>
+
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 pb-20">
+
+    <!-- Horario semanal (lo construye el script) -->
+    <section id="schedule" class="mt-8"></section>
+
+    <!-- Comida primero (estilo Perfect Health Diet) -->
+    <section class="mt-10 bg-mint-tint border border-mint-soft/50 rounded-3xl p-6 sm:p-7">
+      <div class="flex items-start gap-4">
+        <span class="text-3xl shrink-0">🍳</span>
+        <div>
+          <h2 class="font-display font-600 text-2xl text-mint-deep mb-2">Primero la comida (estilo Perfect Health Diet)</h2>
+          <p class="text-lg text-ink leading-relaxed">La mejor farmacia es el plato. Estos suplementos rellenan huecos, no reemplazan la buena comida. La base ideal para ti: <b>hígado y yema de huevo</b> (folato, B12, colina), <b>pescado graso y mariscos</b> (omega 3, taurina, zinc), <b>hojas verdes</b> (magnesio, folato), <b>hongos cocidos</b> (ergo) y <b>sol</b> para la vitamina D. Toma los suplementos que se absorben "con grasa" junto a la comida más grasosa del día.</p>
+        </div>
+      </div>
+    </section>
+
+    <h2 class="font-display font-600 text-3xl text-ink mt-12 mb-1">Lo que estás tomando</h2>
+    <p class="text-inksoft text-lg mb-3">Toca cualquier tarjeta para ver los detalles, bien explicados.</p>
+
+    <p id="filterCount" class="inline-flex items-center gap-2 bg-mint-tint text-mint-deep font-700 text-base px-4 py-2 rounded-full mb-6">📋 Mostrando los 17</p>
+
+    <!-- Tarjetas -->
+    <div id="grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+
+    <p id="emptyMsg" class="hidden text-center text-inksoft text-lg py-10">No hay suplementos en esta categoría.</p>
+
+    <!-- Próximos a considerar -->
+    <section class="mt-16">
+      <div class="flex items-center gap-3 mb-1">
+        <span class="text-2xl">🌱</span>
+        <h2 class="font-display font-600 text-3xl text-ink">Próximos a considerar</h2>
+      </div>
+      <p class="text-inksoft text-lg mb-6">Ideas para más adelante, sin prisa, y siempre platicándolo con el doctor.</p>
+      <div id="gridNext" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+    </section>
+
+    <!-- Aviso importante (al final, para no cortar el flujo) -->
+    <section id="aviso" class="mt-16 bg-coral-tint border border-coral/30 rounded-3xl p-6 sm:p-8">
+      <div class="flex items-start gap-4">
+        <span class="text-3xl shrink-0">🩺</span>
+        <div>
+          <h2 class="font-display font-600 text-2xl text-coral-deep mb-2">Antes de empezar, Papá</h2>
+          <ul class="space-y-2 text-lg text-ink leading-relaxed">
+            <li>• Esto es un resumen con cariño, no una receta médica. Habla siempre con tu doctor antes de empezar o cambiar algo.</li>
+            <li>• Por el <b>omeprazol</b> de muchos años: puede bajar el <b>magnesio</b> y la <b>vitamina B12</b>. Pídele a tu doctor revisarlos en sangre.</li>
+            <li>• Por tu historial de <b>fumador</b>: no tomes <b>beta caroteno</b> en pastilla de dosis alta (ahí está la señal de riesgo para el pulmón). Ninguno de tus suplementos lo trae en dosis alta. El <b>MacuGuard</b> sí incluye una mezcla chica de carotenoides (aporta 1.24 mg de alfa caroteno, que no es lo mismo que el beta caroteno en dosis alta). A esa cantidad tan pequeña no es un riesgo, pero coméntalo con tu oftalmólogo.</li>
+            <li>• ¿Tomas algún <b>anticoagulante</b> (warfarina o Coumadin) o aspirina? Avísale a tu doctor, porque algunos de estos pueden interactuar.</li>
+            <li>• Con tu <b>reflujo</b>: toma los suplementos con comida y no te acuestes enseguida. Agrega uno a la vez para ver cómo te cae.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pie con acciones -->
+    <section class="no-print mt-16 bg-gradient-to-br from-mint-tint to-blue-tint rounded-3xl p-8 text-center">
+      <h2 class="font-display font-600 text-2xl text-ink mb-2">¿Quieres llevarte la lista?</h2>
+      <p class="text-inksoft text-lg mb-6">El <b>horario</b> es ideal para pegar en el refri. La <b>lista completa</b> trae todos los detalles.</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <button onclick="imprimirHorario()" class="press bg-blue-deep hover:bg-[#336B85] text-white font-700 text-lg px-7 py-4 rounded-2xl shadow-md">🗓️ Imprimir horario (refri)</button>
+        <button onclick="imprimirTodo()" class="press bg-slate-soft hover:bg-[#6A8592] text-white font-700 text-lg px-7 py-4 rounded-2xl shadow-md">📋 Imprimir todo</button>
+        <button onclick="guardarPDF()" class="press bg-mint-deep hover:bg-[#43896E] text-white font-700 text-lg px-7 py-4 rounded-2xl shadow-md">📄 Guardar como PDF</button>
+      </div>
+      <p class="mt-6 text-base text-inksoft max-w-xl mx-auto">
+        Para guardar como PDF: en la ventana de impresión, elige <b>"Guardar como PDF"</b> en el destino, y listo.
+      </p>
+    </section>
+
+    <p class="text-center text-base text-inksoft mt-10">
+      Hecho con cariño para Papá. Esto no reemplaza la opinión de tu médico.
+    </p>
+  </main>
+</div>
+
+<!-- ====================== MODAL ====================== -->
+<div id="modal" class="no-print fixed inset-0 z-50 hidden items-end sm:items-center justify-center p-0 sm:p-6" role="dialog" aria-modal="true" aria-labelledby="modalName">
+  <div class="absolute inset-0 bg-ink/50 fadeIn" onclick="closeModal()"></div>
+  <div id="modalCard" tabindex="-1" class="modalIn relative bg-paper w-full sm:max-w-2xl max-h-[92vh] overflow-y-auto rounded-t-3xl sm:rounded-3xl shadow-2xl">
+    <!-- cabecera del modal -->
+    <div id="modalHead" class="sticky top-0 z-10 px-6 pt-6 pb-4 border-b border-black/5 bg-paper">
+      <div class="flex items-start justify-between gap-4">
+        <div class="flex items-center gap-4">
+          <div id="modalBottle" class="shrink-0"></div>
+          <div>
+            <p id="modalBrand" class="text-sm font-700 text-inksoft uppercase tracking-wide"></p>
+            <h3 id="modalName" class="font-display font-600 text-2xl text-ink leading-tight"></h3>
+            <div id="modalTags" class="flex flex-wrap gap-1.5 mt-2"></div>
+          </div>
+        </div>
+        <button onclick="closeModal()" class="press shrink-0 w-11 h-11 rounded-full bg-cream text-ink text-2xl flex items-center justify-center shadow-sm" aria-label="Cerrar">✕</button>
+      </div>
+      <!-- pestañas -->
+      <div class="flex gap-2 mt-4 overflow-x-auto pb-1" id="modalTabs"></div>
+    </div>
+    <!-- contenido de pestañas -->
+    <div id="modalBody" class="px-6 py-6 text-lg leading-relaxed"></div>
+  </div>
+</div>
+
+<!-- ====================== HOJA DE IMPRESIÓN ====================== -->
+<div id="printSchedule" class="font-body text-ink"></div>
+<div id="printFull" class="font-body text-ink"></div>
+
+<script>
+/* ---------- Paleta por categoría ---------- */
+const CAT = {
+  ojos:     { label: 'Ojos',     emoji: '👁️', color: '#4F94B8', tint: '#E5F0F6' },
+  pulmones: { label: 'Pulmones', emoji: '🫁', color: '#4E9E80', tint: '#E4F4EC' },
+  energia:  { label: 'Energía',  emoji: '⚡', color: '#D9A23E', tint: '#FAF1DC' },
+  cuerpo:   { label: 'Cuerpo',   emoji: '🌿', color: '#7E9AA6', tint: '#EAF0F2' },
+};
+
+/* ---------- Frasco dibujado ---------- */
+function bottleSVG(color, size = 64) {
+  return `
+  <svg width="${size}" height="${size}" viewBox="0 0 64 64" aria-hidden="true">
+    <rect x="24" y="6" width="16" height="8" rx="2" fill="${color}"/>
+    <rect x="20" y="13" width="24" height="6" rx="2" fill="${color}" opacity=".75"/>
+    <rect x="18" y="18" width="28" height="40" rx="8" fill="#ffffff" stroke="${color}" stroke-width="3"/>
+    <rect x="22" y="30" width="20" height="18" rx="4" fill="${color}" opacity=".14"/>
+    <circle cx="28" cy="39" r="3" fill="${color}" opacity=".55"/>
+    <circle cx="36" cy="39" r="3" fill="${color}" opacity=".55"/>
+    <circle cx="32" cy="44" r="3" fill="${color}" opacity=".55"/>
+  </svg>`;
+}
+
+/* ---------- Medidor de evidencia (puntos honestos) ---------- */
+function dots(n) {
+  let s = '<span class="inline-flex gap-1 align-middle">';
+  for (let i = 1; i <= 4; i++) {
+    s += `<span class="w-3 h-3 rounded-full ${i <= n ? 'bg-mint-deep' : 'bg-black/10'}"></span>`;
+  }
+  return s + '</span>';
+}
+
+/* ---------- Datos de los suplementos ---------- */
+const SUPS = [
+  {
+    id:'pqq', name:'PQQ', brand:'Double Wood · 20 mg', dose:'20 mg', cats:['energia'], inter:false, suggested:false,
+    benefits:['Ayuda a tus "motorcitos" de energía (las mitocondrias) a trabajar mejor.','Puede dar más energía y claridad mental.','Antioxidante suave que protege las células.'],
+    forMe:'Con EPOC tu cuerpo gasta mucha energía solo para respirar. El PQQ apoya a las células para producir energía y trabaja muy bien en equipo con el Ubiquinol.',
+    wow:'Lo más fascinante: en células y animales, el PQQ no solo cuida las mitocondrias, parece ayudar a fabricar mitocondrias nuevas. Enciende un interruptor llamado PGC-1 alfa, el "jefe" que ordena crear más motorcitos de energía. En personas apenas hay un estudio pequeño con buena señal (mejor consumo de oxígeno), así que es prometedor pero todavía joven. Casi ningún suplemento intenta esto.',
+    food:'Natto, perejil, té verde, pimiento verde y kiwi (en cantidades pequeñas).',
+    evLevel:'Preliminar', evDots:2, evText:'Estudios pequeños en personas y de laboratorio, con resultados prometedores. Todavía faltan estudios grandes para estar seguros.',
+    dosing:'1 cápsula (20 mg) en la mañana, con o sin comida.',
+    cautions:['Muy bien tolerado.','Si lo tomas de noche, a algunas personas les quita el sueño. Mejor en la mañana.','No se conocen problemas con el omeprazol.'],
+  },
+  {
+    id:'astax', name:'Astaxantina', brand:'Double Wood / AstaReal · 12 mg', dose:'12 mg', cats:['ojos','pulmones'], inter:true, suggested:false,
+    benefits:['Antioxidante muy fuerte que llega bien a los ojos.','Bueno para los ojos y la piel.','Ayuda a calmar la inflamación del cuerpo.'],
+    forMe:'Para tus ojos es un antioxidante que sí llega hasta adentro del ojo. Como un ojo ya quedó dañado, la meta es cuidar el otro lo mejor posible, y aquí es donde este tipo de apoyo tiene sentido. También ayuda con la inflamación de los pulmones. Es de los más útiles para ti.',
+    wow:'Lo más fascinante: en pruebas de laboratorio, para apagar un radical libre muy dañino (el oxígeno singlete), la astaxantina resultó cerca de 6000 veces más potente que la vitamina C. Ojo con la honestidad: es una medida específica de laboratorio, no que sea "6000 veces mejor" en todo. Viene de una microalga y es lo que pinta de rosa al salmón y le da aguante para nadar río arriba. Llega hasta adentro del ojo y del cerebro, donde casi ningún antioxidante alcanza, y nunca se "voltea" para volverse dañina. Para unos pulmones con EPOC, que viven bajo estrés oxidativo, ese tipo de protección viene como anillo al dedo.',
+    food:'Salmón salvaje, trucha, camarón y krill: es lo que los pinta de rosa.',
+    evLevel:'Prometedora', evDots:3, evText:'Buena evidencia para el cansancio visual y como antioxidante. Para los pulmones es más nueva, pero alentadora.',
+    dosing:'1 cápsula (12 mg) al día, con una comida que tenga algo de grasa (así se absorbe mejor).',
+    cautions:['En dosis altas puede adelgazar un poco la sangre.','Si tomas anticoagulante (por ejemplo warfarina), avísale a tu doctor.','Tómala con comida para cuidar el estómago y el reflujo.'],
+  },
+  {
+    id:'taurina', name:'Taurina', brand:'Nutricost · 1000 mg', dose:'1000 mg', cats:['energia','pulmones'], inter:false, suggested:false,
+    benefits:['Apoya al corazón, los músculos y la energía.','Tiene un efecto calmante suave.','Ayuda a la resistencia del cuerpo.'],
+    forMe:'El corazón y los pulmones trabajan en equipo. La taurina apoya al corazón y puede ayudarte con la resistencia. Se está estudiando para el envejecimiento sano.',
+    wow:'Lo más fascinante: en 2023 un estudio en la revista Science vio que la taurina baja con la edad, y que reponerla alargó la vida de los ratones cerca de un 10 por ciento y mejoró la salud de monos viejos. Causó mucho revuelo. Para ser honestos: en 2025 otro estudio en personas no encontró el mismo efecto, así que en humanos todavía no está claro. Es de los temas más emocionantes (y debatidos) del envejecimiento.',
+    food:'Carne, mariscos y pescado. Casi no existe en las plantas.',
+    evLevel:'Moderada', evDots:3, evText:'Buena para el corazón. Lo de longevidad es nuevo y todavía se está estudiando.',
+    dosing:'1 a 2 cápsulas (1000 a 2000 mg) al día.',
+    cautions:['Muy segura.','No hay problema conocido con el omeprazol.','Si tienes problemas de riñón, consúltalo con tu doctor.'],
+  },
+  {
+    id:'d3', name:'Vitamina D3', brand:'Life Extension · 125 mcg (5000 UI)', dose:'125 mcg', cats:['pulmones'], inter:true, suggested:false,
+    benefits:['La vitamina del sol.','Apoya las defensas, los pulmones, los huesos y el ánimo.'],
+    forMe:'Mucha gente con EPOC tiene la vitamina D baja, y eso debilita las defensas y los pulmones. Subirla a un buen nivel ayuda a tu sistema respiratorio. Se toma junto con la K2.',
+    wow:'Lo más fascinante: aunque le decimos "vitamina", en realidad trabaja como una hormona. Casi cada célula de tu cuerpo tiene una cerradura especial para ella, y la usa para encender o apagar cientos de genes, incluidos los de las defensas. Por eso afecta tantas cosas, desde los huesos hasta los pulmones.',
+    food:'El sol es la fuente principal. En comida: pescado graso (salmón, sardina), yema de huevo e hígado.',
+    evLevel:'Sólida', evDots:4, evText:'Evidencia sólida para corregir una deficiencia. Moderada para apoyar las defensas respiratorias.',
+    dosing:'Lo que usamos: 1 cápsula (125 mcg / 5000 UI) CADA DOS DÍAS (un día sí y al siguiente no), con comida. Como cada cápsula es alta, tomarla cada dos días da un buen promedio sin pasarte. La K2 sí se toma todos los días. Pídele a tu doctor una prueba de sangre de vitamina D para ajustar.',
+    cautions:['5000 UI es una dosis alta (el límite general diario ronda las 4000 UI), por eso la tomamos cada dos días y con análisis de sangre que la respalden.','Las dosis altas necesitan K2 de compañera.','Si tomas diurético (tipo tiazida) o digoxina para el corazón, avísale a tu doctor: la vitamina D puede subir el calcio.','Conviene revisar el calcio en sangre cada cierto tiempo.','Tómala con comida.'],
+  },
+  {
+    id:'k2', name:'Vitamina K2 (MK-7)', brand:'Nutricost', dose:'MK-7', cats:['cuerpo'], inter:true, suggested:false,
+    benefits:['Guía al calcio hacia los huesos.','Lo aleja de las arterias.','Es la compañera ideal de la vitamina D.'],
+    forMe:'Como tomas vitamina D, la K2 ayuda a que el calcio vaya a donde debe (los huesos) y no a las arterias. La K2 se toma todos los días; la D3 va cada dos días, y ese día se acompañan.',
+    wow:'Lo más fascinante: la K2 la fabrican bacterias, incluidas las de tu intestino y las del natto (un alimento japonés fermentado). Su trabajo es como el de un policía de tránsito del calcio: lo manda a los huesos y lo saca de las arterias. La forma MK-7 dura varios días en la sangre, por eso basta una al día.',
+    food:'Natto, yema de huevo, quesos curados, hígado y mantequilla de animales de pastura.',
+    evLevel:'Moderada', evDots:3, evText:'Buena evidencia para la salud de los huesos y las arterias.',
+    dosing:'1 cápsula todos los días, con comida. La K2 se toma diario aunque la D3 sea cada dos días; el día que toques la D3, tómalas juntas.',
+    cautions:['MUY IMPORTANTE: si tomas un anticoagulante tipo warfarina (Coumadin), la K2 cambia su efecto. No la empieces sin avisar a tu doctor.','Con anticoagulantes nuevos (como apixaban) suele haber menos problema, pero pregunta igual.'],
+  },
+  {
+    id:'tudca', name:'TUDCA', brand:'Nutricost · 250 mg', dose:'250 mg', cats:['cuerpo'], inter:false, suggested:false,
+    benefits:['Ácido biliar que apoya al hígado y la vesícula.','Ayuda a que la bilis fluya bien.'],
+    forMe:'Tomas varios suplementos y medicamentos, y todo eso lo procesa el hígado. El TUDCA es un apoyo suave para el hígado.',
+    wow:'Lo más fascinante: el TUDCA viene de un ácido que los osos producen en grandes cantidades (por eso "urso", que significa oso). Dentro de la célula actúa como un ayudante de orden: ayuda a que las proteínas se doblen bien y calma el estrés de la fábrica interna. La medicina antigua usaba bilis de oso hace siglos; hoy se hace limpio en laboratorio.',
+    food:'No viene de la comida; el cuerpo fabrica ácidos biliares parecidos. Aquí es solo suplemento.',
+    evLevel:'Preliminar', evDots:2, evText:'Buena base de laboratorio y en ciertas enfermedades del hígado. En personas sanas todavía falta más estudio.',
+    dosing:'1 cápsula (250 mg) al día. Pregúntale a tu doctor si la prefiere en ayunas o con comida.',
+    cautions:['Bien tolerado.','Si tienes piedras en la vesícula o problemas de vías biliares, consúltalo primero con tu doctor.'],
+  },
+  {
+    id:'mag', name:'Magnesio Glicinato', brand:'Forma suave para el estómago', dose:'Glicinato', cats:['energia'], inter:true, suggested:false,
+    benefits:['Mineral relajante.','Ayuda al sueño, los músculos, el corazón y los nervios.','La forma glicinato es suave con el estómago.'],
+    forMe:'ESTO ES CLAVE PARA TI: el omeprazol que tomas por mucho tiempo puede bajar el magnesio del cuerpo. Reponerlo es muy buena idea. Además ayuda a dormir y a relajar los músculos.',
+    wow:'Lo más fascinante: el magnesio es el corazón verde de las plantas, está justo en el centro de la clorofila (lo que las hace verdes). En tu cuerpo es la llave de más de 300 trabajos distintos, desde producir energía hasta calmar los nervios. Y el glicinato trae glicina, que de por sí relaja: doble ayuda para dormir.',
+    food:'Hojas verdes, semillas de calabaza, cacao, aguacate, frijoles y pescado.',
+    evLevel:'Sólida', evDots:4, evText:'Evidencia sólida para reponer un magnesio bajo, mejorar el sueño y la relajación.',
+    dosing:'1 a 2 cápsulas al día. En la noche ayuda a dormir mejor.',
+    cautions:['Si te suelta el estómago, baja la dosis.','Sepáralo unas 2 horas de antibióticos o pastillas de tiroides.','Con problemas serios de riñón, consulta a tu doctor.','Pídele que revise tu magnesio en sangre, por el omeprazol.'],
+  },
+  {
+    id:'folato', name:'Methyl Folate', brand:'Jarrow · 400 mcg', dose:'400 mcg', cats:['energia'], inter:false, suggested:false, star:true,
+    benefits:['Folato activo, listo para usar.','Hace equipo con la B12 para formar sangre sana, energía y buen ánimo.','Ayuda a bajar la homocisteína (que en EPOC suele estar alta).'],
+    forMe:'Es el folato ya "activado", listo para usar. Hace EQUIPO con la vitamina B12: juntas bajan la homocisteína (una sustancia que cuando sube castiga al corazón y los vasos, y que en EPOC suele estar alta) y ayudan a formar sangre, energía y buen ánimo. Mucha gente convierte mal el ácido fólico común, y a ellos esta forma activa les cae mucho mejor.',
+    wow:'Lo más fascinante: la palabra "folato" viene de "follaje", las hojas verdes. Esta forma ya viene activada y lista para usar. Mucha gente tiene un gen (MTHFR) que convierte mal el ácido fólico común, y a ellos el folato activo les cae mucho mejor. Es pieza clave de la metilación, el sistema de mantenimiento de tu ADN.',
+    food:'Hígado, hojas verdes (espinaca, acelga), frijoles, aguacate y yema de huevo. Esta es la mejor fuente, la cápsula solo rellena huecos.',
+    evLevel:'Sólida', evDots:4, evText:'Evidencia sólida para cubrir el folato. En EPOC, un estudio vio que el folato baja la homocisteína elevada, una señal favorable para corazón y vasos.',
+    dosing:'Lo que usamos: 1 cápsula (400 mcg) 1 vez por semana (por ejemplo el domingo), junto con la B12. Poco y bien: el estilo comida-primero prefiere sacar el folato del plato (hígado, hojas verdes) y usar la cápsula solo como apoyo. Siempre acompañado de la B12.',
+    cautions:['Muy segura.','No conviene tomar mucho folato SOLO: puede ocultar una falta de B12 mientras el daño en los nervios sigue. Por eso va siempre acompañado de la B12.','El omeprazol y otros medicamentos pueden bajar la B12. Pídele a tu doctor revisar la B12 junto con el folato, porque van de la mano.'],
+  },
+  {
+    id:'b12', name:'Methyl B-12', brand:'Jarrow Ultra Strength · 2500 mcg masticable (metilcobalamina)', dose:'2500 mcg', cats:['energia','pulmones'], inter:false, suggested:false, star:true,
+    benefits:['Vitamina para la energía, los nervios y la sangre, en la forma activa (metilcobalamina) lista para usar.','Apoya la memoria, el equilibrio y que los nervios funcionen bien.','Baja la homocisteína, que cuando sube castiga al corazón y los vasos.'],
+    forMe:'Papá, esta es de las MÁS importantes para ti, y la razón es directa: el omeprazol baja el ácido del estómago, y sin ese ácido el cuerpo casi no puede sacar la B12 de la comida. Con los años eso deja la B12 baja, lo que roba energía, cansa los músculos y nubla la memoria. La buena noticia: la dosis es tan alta que, aunque el omeprazol baje la absorción, el cuerpo alcanza a tomar de sobra lo que necesita, así que le da la vuelta al problema. En EPOC la B12 baja es común, y reponerla apoya tu energía y tu fuerza para moverte. Trabaja de la mano con el Methyl Folato: son pareja.',
+    wow:'Lo más fascinante: la metilcobalamina es la B12 lista para que tus células la usen de inmediato. Ayuda a dos cosas a la vez: a producir energía dentro de las mitocondrias y a reparar la mielina, la "cubierta" que protege tus nervios (como el plástico que recubre un cable). Por eso, cuando falta B12, lo primero que aparece es cansancio y hormigueos. Y dato curioso: la B12 es la única vitamina que lleva un metal en su corazón (cobalto), por eso es de color rojo rubí.',
+    food:'Hígado, almejas, carne, pescado y huevo. Solo viene de alimentos de origen animal, por eso el omeprazol la complica tanto.',
+    evLevel:'Sólida (y muy relevante para ti)', evDots:4, evText:'Está muy bien establecido que el omeprazol baja la B12 con el tiempo y que la B12 baja es común en EPOC. Un estudio controlado pequeño vio que sumar B12 al ejercicio mejoró algo la resistencia en EPOC avanzada (efecto modesto, faltan estudios grandes). Reponer B12 baja la homocisteína.',
+    dosing:'Lo que usamos: 1 masticable de 2500 mcg, 3 veces por semana (por ejemplo lunes, miércoles y viernes en la mañana). Mastícala o déjala disolver en la boca, con o sin comida. ¿Por qué dosis alta pocas veces? Porque con el omeprazol se absorbe muy poquito de cada toma, y aun así cubre de sobra. Muy segura: lo que sobra se elimina en la orina. (Si tu doctor ve la B12 muy baja, puede sugerir tomarla diario unas 2 semanas al inicio.)',
+    cautions:['Muy segura. El exceso se elimina solo, no se acumula de forma peligrosa.','Tómala junto con el Methyl Folato, no el folato solo, para no "tapar" una posible falta de B12.','Pídele a tu doctor revisar en sangre la B12 y, si se puede, la homocisteína o el MMA (muestran si de verdad te falta).','Si te diagnosticaron anemia perniciosa o algo de los riñones, coméntalo con tu doctor.'],
+  },
+  {
+    id:'ubi', name:'Ubiquinol', brand:'Life Extension · Super Ubiquinol CoQ10', dose:'CoQ10', cats:['energia'], inter:true, suggested:false,
+    benefits:['La forma "lista para usar" de la CoQ10.','Energía para el corazón y los músculos.','Antioxidante.'],
+    forMe:'El corazón y los pulmones necesitan mucha energía. El Ubiquinol alimenta esos motorcitos de energía. Es muy buen compañero del PQQ, y útil sobre todo si tomas estatinas (porque la bajan).',
+    wow:'Lo más fascinante: se llama "ubiquinona" porque es ubicua, está en TODAS las células del cuerpo. Y tu corazón es donde más se concentra, porque nunca descansa y necesita muchísima energía. Hace doble papel: es el cablecito que pasa la electricidad en la fábrica de energía y al mismo tiempo es antioxidante.',
+    food:'Corazón e hígado, carne y pescado graso (en poca cantidad).',
+    evLevel:'Moderada', evDots:3, evText:'Buena para el corazón, la energía y las molestias musculares por estatinas.',
+    dosing:'Según el frasco (100 a 200 mg) 1 vez al día, con comida con algo de grasa.',
+    cautions:['Puede bajar un poco la presión: si tomas medicina para la presión, vigílalo.','Puede reducir el efecto de la warfarina: avisa a tu doctor si la tomas.'],
+  },
+  {
+    id:'zinc', name:'Zinc con Cobre', brand:'Bulletproof', dose:'Zinc + Cobre', cats:['pulmones','ojos'], inter:true, suggested:false,
+    benefits:['Zinc para las defensas y la cicatrización.','Cobre para mantener el equilibrio.','Apoya los ojos y los pulmones.'],
+    forMe:'El zinc ayuda a tus defensas (importante con EPOC) y a los ojos. Que venga CON cobre es perfecto: el zinc solo, por mucho tiempo, baja el cobre, pero aquí ya viene balanceado.',
+    wow:'Lo más fascinante: tu sentido del gusto y del olfato dependen del zinc (cuando alguien deja de saborear bien, a veces es por falta de zinc). Además, el zinc forma unos "dedos" microscópicos que agarran y leen tu ADN. El cobre es su pareja de baile: compiten por el mismo lugar, por eso conviene tomarlos juntos y balanceados.',
+    food:'Ostras (altísimo), carne roja y semillas de calabaza. El cobre: hígado y mariscos.',
+    evLevel:'Moderada a sólida', evDots:4, evText:'Sólida para las defensas y la deficiencia. Para los ojos (degeneración macular) hay buena evidencia del zinc.',
+    dosing:'1 cápsula al día con comida (el zinc en ayunas molesta el estómago).',
+    cautions:['Tómalo con comida (cuidado con el reflujo).','El omeprazol baja un poco la absorción del zinc; tomarlo con comida ayuda.','Sepáralo unas 2 horas de antibióticos y de la pastilla de tiroides.','No tomes zinc extra por separado, para no pasarte.'],
+  },
+  {
+    id:'nac', name:'NAC', brand:'N-Acetil Cisteína · 600 mg', dose:'600 mg', cats:['pulmones'], inter:true, suggested:false,
+    benefits:['Ayuda a aflojar la flema.','Sube el glutatión, el antioxidante "maestro" del cuerpo.','Está muy ligado a la salud de los pulmones.'],
+    forMe:'ESTE ES DE LOS MÁS ÚTILES PARA TUS PULMONES. Ayuda a que la mucosidad sea menos espesa y más fácil de sacar, y apoya las defensas antioxidantes del pulmón. En EPOC se ha visto que puede ayudar a tener menos crisis.',
+    wow:'Lo más fascinante: el NAC es el mismo medicamento que usan en los hospitales como antídoto cuando alguien se intoxica con demasiado paracetamol (Tylenol). ¿Por qué sirve? Porque dispara el glutatión, el antioxidante maestro que limpia el hígado y los pulmones. Lo que rescata al hígado en una emergencia es lo que apoya tus pulmones día a día.',
+    food:'El cuerpo lo arma a partir de cisteína: huevo, carne, pollo, ajo y cebolla ayudan a subir el glutatión. El NAC como tal es suplemento.',
+    evLevel:'Moderada (buena para EPOC)', evDots:3, evText:'Varios estudios en EPOC con dosis adecuadas muestran beneficio. De lo mejor respaldado para tus pulmones.',
+    dosing:'600 mg, 1 a 2 veces al día (para pulmones, a menudo 600 mg dos veces al día). Confírmalo con tu doctor.',
+    cautions:['Bien tolerado.','Si usas nitroglicerina para el corazón, puede bajar más la presión: avisa a tu doctor.','Puede dar algo de molestia de estómago: tómalo con comida.'],
+  },
+  {
+    id:'theanine', name:'L-Theanine', brand:'Del té verde', dose:'100-200 mg', cats:['energia'], inter:false, suggested:false,
+    benefits:['Calma sin dar sueño pesado.','Ayuda a la concentración.','Favorece un descanso tranquilo.'],
+    forMe:'Para los nervios y para dormir tranquilo sin sentirte atontado al día siguiente. Relaja la mente de forma suave.',
+    wow:'Lo más fascinante: la L-teanina casi solo existe en una planta, la del té. En el cerebro sube las ondas "alfa", el mismo estado de calma despierta que se ve en personas meditando. Por eso relaja sin dar sueño pesado: te tranquiliza y te deja lúcido a la vez. Empieza a sentirse como en media hora.',
+    food:'Té verde y té negro.',
+    evLevel:'Moderada', evDots:3, evText:'Buena evidencia para la calma y el enfoque, sin sedación fuerte.',
+    dosing:'100 a 200 mg cuando lo necesites (por la tarde o noche para descansar).',
+    cautions:['Muy segura.','Si tomas medicina para la presión, en dosis altas podría bajarla un poquito más. Nada grave, pero coméntalo con tu doctor.'],
+  },
+  {
+    id:'glicina', name:'Glicina', brand:'Cápsulas de 1000 mg (1 g)', dose:'3 g', cats:['energia','pulmones'], inter:false, suggested:false,
+    benefits:['Aminoácido con efecto calmante que ayuda a un sueño más profundo.','Al día siguiente ayuda a sentirse menos cansado.','Es ladrillo del glutatión (el antioxidante maestro) y del colágeno.'],
+    forMe:'Para dormir más profundo y despertar más descansado, sin sentirte atontado. Hace buen equipo con el magnesio en la noche. Además, es materia prima para el glutatión, que le sirve a tus pulmones, y para el colágeno del cuerpo. Suave y muy segura.',
+    wow:'Lo más fascinante: la glicina es el aminoácido más pequeño de todos, tan chico que cabe donde otros no. Tomada antes de dormir, ayuda a que la sangre llegue mejor a manos y pies, y eso baja un poquito la temperatura del centro del cuerpo. Ese pequeño enfriamiento es justo la señal que tu cerebro usa para entrar en sueño profundo, por eso ayuda a dormir mejor. Y de día, tu cuerpo la usa para fabricar glutatión y colágeno.',
+    food:'Caldo de huesos, grenetina (gelatina), piel y cartílago de la carne, y el colágeno. Casi no está en la carne magra.',
+    evLevel:'Moderada (sueño) y sólida (glutatión/colágeno)', evDots:3, evText:'Para el sueño hay estudios pequeños pero consistentes: 3 g antes de dormir mejoraron el sueño y bajaron el cansancio de día. Faltan estudios grandes. Su papel como ladrillo del glutatión y del colágeno sí está bien establecido.',
+    dosing:'Lo que usamos: 3 cápsulas (3 g en total) en la noche, unos 30 a 60 minutos antes de dormir. Se puede con o sin comida. Sabe ligeramente dulce.',
+    cautions:['Muy segura: es un aminoácido que ya viene en la comida.','No se conocen problemas con el omeprazol.','Si tomas clozapina (una medicina para la mente), coméntalo con tu doctor, porque la glicina podría restarle efecto. Con otros medicamentos no hay problema conocido.','Como todo lo nuevo, agrégala de una en una para ver cómo te cae.'],
+  },
+  {
+    id:'ergo', name:'Ergo (Ergotioneína)', brand:'Del hongo shiitake · "vitamina de la longevidad"', dose:'De hongos', cats:['pulmones','energia'], inter:false, suggested:false,
+    benefits:['Antioxidante especial que viene de los hongos (shiitake, hongo ostra).','Tu cuerpo lo guarda justo donde hay más desgaste, incluidos los pulmones.','Es muy estable: aguanta la cocción y dura mucho dentro del cuerpo.'],
+    forMe:'En la EPOC los pulmones viven bajo mucho "estrés oxidativo", como un óxido que daña los tejidos. Lo bonito del ergo es que tu cuerpo lo manda a propósito a los lugares más castigados, y los pulmones bajo estrés son justo uno de ellos. Lo mejor de todo: lo puedes subir comiendo hongos cocidos (shiitake u hongo ostra) varias veces por semana, que es la forma más natural y sabrosa. La pastilla es opcional.',
+    wow:'Lo más fascinante: se descubrió en 1909 en un hongo, y en 2005 los científicos encontraron que el cuerpo humano tiene una "puerta" exclusiva (un transportador llamado OCTN1) hecha solo para el ergo. Piénsalo: la evolución le construyó su propia entrada VIP, algo rarísimo entre los nutrientes. Eso hace pensar que es de verdad importante. Y como los hongos lo fabrican y aguanta el calor, un guisado de shiitake te lo entrega intacto.',
+    food:'Hongos, sobre todo shiitake y hongo ostra. Un poco en hígado y frijoles. Comerlos cocidos es la mejor forma.',
+    evLevel:'Preliminar pero prometedora', evDots:2, evText:'La biología es fascinante (tu cuerpo tiene un transportador dedicado solo para él) y estudios de población ligan niveles altos con menos enfermedades de la edad. Pero faltan estudios grandes que prueben que en pastilla cure o prevenga algo. Por eso: primero la comida (hongos), la pastilla como extra.',
+    dosing:'Forma natural (la mejor): hongos cocidos, sobre todo shiitake u hongo ostra, 2 o 3 veces por semana. En pastilla, si la quieres: lo común es de 5 a 25 mg al día, con comida. Es un complemento, sin prisa.',
+    cautions:['Muy seguro: es algo que ya viene en la comida.','Se absorbe bien aunque tomes omeprazol, no depende del ácido del estómago.','Si eres alérgico a los hongos, evítalo.','Como todo lo nuevo, agrégalo de uno en uno para ver cómo te cae.'],
+  },
+  /* ----- Sugeridos ----- */
+  {
+    id:'gse', name:'Extracto de Semilla de Uva (GSE)', brand:'Para considerar más adelante', dose:'Por definir', cats:['ojos'], inter:true, suggested:true,
+    benefits:['Antioxidante para la circulación y los vasos sanguíneos pequeños.','Puede apoyar la salud de los capilares del ojo.'],
+    forMe:'Para considerar en el futuro, sin prisa. La idea: como la meta es cuidar el ojo sano, el GSE fortalece los vasos sanguíneos más pequeñitos (los capilares), incluidos los del ojo, y apoya la circulación. No es urgente ni obligatorio; es una carta más para tener sobre la mesa cuando ya estén asentados los demás.',
+    wow:'Lo más fascinante: la semilla de uva trae unos compuestos (OPCs) que actúan como refuerzo para los capilares, las tuberías más delgadas del cuerpo. Por eso se estudia para la circulación de las piernas y de los ojos.',
+    food:'Uvas con semilla y, en poca cantidad, el vino tinto.',
+    evLevel:'Moderada (mejor para circulación)', evDots:3, evText:'La mejor evidencia del GSE es para la insuficiencia venosa y la salud de los vasos sanguíneos (varios ensayos con OPCs muestran beneficio en circulación y en hinchazón de piernas). Para el ojo la evidencia es más indirecta: se apoya en que fortalece los mismos capilares. Por eso está en "para después": prometedor y seguro, pero sin ser una pieza central.',
+    dosing:'Si se agrega más adelante, lo común es 150 a 300 mg al día con comida. Defínelo con tu doctor cuando llegue el momento.',
+    cautions:['Puede adelgazar un poco la sangre: cuidado si tomas aspirina o anticoagulante.','Empieza uno a la vez para ver cómo te cae.'],
+  },
+  {
+    id:'macuguard', name:'MacuGuard', brand:'Life Extension · Azafrán + Luteína + Zeaxantina + Astax', dose:'Fórmula ojos', cats:['ojos'], inter:true, suggested:false,
+    benefits:['Fórmula completa para los ojos.','Luteína, zeaxantina, azafrán y astaxantina juntos.','Protege la mácula, el centro de la vista.'],
+    forMe:'Aporta luteína y zeaxantina, los pigmentos que tu propio ojo guarda en el centro de la vista para filtrar la luz azul dañina, como unos lentes de sol internos. Como un ojo ya perdió mucha visión (ves contornos y sombras), la meta es proteger el ojo sano lo mejor posible, y para eso estos pigmentos tienen sentido. Un detalle honesto: la evidencia más fuerte de estos ingredientes es para la degeneración macular, que es otra condición; aquí es cuidado general y protección, no un tratamiento que devuelva la vista del ojo dañado. Coméntalo con tu oftalmólogo.',
+    wow:'Lo más fascinante: la luteína y la zeaxantina son los únicos colores que tu cuerpo guarda a propósito justo en el centro de la vista, formando como unos lentes de sol internos que filtran la luz azul dañina. Comer espinaca y huevo los sube de forma natural, y suplementarlos los refuerza. Hechos a la medida para la mácula.',
+    food:'Luteína y zeaxantina: yema de huevo, espinaca, col rizada y maíz.',
+    evLevel:'Moderada', evDots:3, evText:'La luteína y la zeaxantina tienen buena evidencia, pero para la degeneración macular (estudios AREDS2). Con honestidad: eso no es lo mismo que el daño de retina que tú tienes, así que aquí sirve como protección general del ojo sano, no como tratamiento. El azafrán es prometedor para la vista. Coméntalo con tu oftalmólogo.',
+    dosing:'Por ahora: 1 cápsula cada día o cada dos días, con comida, hasta que se termine el otro frasco de luteína/zeaxantina que ya tienes abierto. Es tu aporte de luteína y zeaxantina para el ojo. Cuando acabes el otro frasco, tú y tu doctor deciden si sigue diario.',
+    cautions:['Ojo con la astaxantina: tu cápsula aparte trae 12 mg y el MacuGuard suma 6 mg más, o sea unos 18 mg al día en total. Es una cantidad segura, pero como la astaxantina adelgaza un poquito la sangre, avísale a tu doctor si tomas aspirina o anticoagulante.','Bien tolerada. Tómala con comida para que se absorba mejor.'],
+  },
+  {
+    id:'boro', name:'Boro (Boron)', brand:'3 mg', dose:'3 mg', cats:['cuerpo'], inter:false, suggested:false,
+    benefits:['Mineral en cantidad pequeña que ayuda a los huesos.','Ayuda a tu cuerpo a aprovechar mejor el calcio, el magnesio y la vitamina D.','Puede apoyar las articulaciones y bajar un poco la inflamación.'],
+    forMe:'Como ya tomas vitamina D, K2 y magnesio, el boro ayuda a que tu cuerpo los use mejor y a cuidar tus huesos. Es un apoyo discreto pero útil.',
+    wow:'Lo más fascinante: el boro es un mineral que las plantas necesitan a fuerza, y en el cuerpo humano ayuda a que la vitamina D y el magnesio duren más activos. Un estudio pequeño vio que con apenas unos días tomando boro cambiaban algunas hormonas. Es de esos minerales pequeños pero importantes: hace falta poquito para notarse.',
+    food:'Ciruela pasa, pasas, aguacate, nueces y frijoles.',
+    evLevel:'Moderada', evDots:3, evText:'Buena evidencia para los huesos y para aprovechar mejor los minerales. Otros beneficios (articulaciones y hormonas) son más preliminares.',
+    dosing:'Alrededor de 3 mg, 3 veces por semana, con comida. Poquito y bien: no hace falta diario.',
+    cautions:['Muy seguro en dosis pequeñas. No te pases de la dosis que dice el frasco.','Tómalo con comida para cuidar el reflujo.','Con problemas de riñón, consúltalo primero con tu doctor.','No se conocen problemas con el omeprazol.'],
+  },
+];
+
+/* ---------- Construir una tarjeta ---------- */
+function cardHTML(s, idx) {
+  const mainCat = CAT[s.cats[0]];
+  const tags = s.cats.map(c => {
+    const k = CAT[c];
+    return `<span class="inline-flex items-center gap-1 text-sm font-700 px-2.5 py-1 rounded-full" style="background:${k.tint};color:${k.color}">${k.emoji} ${k.label}</span>`;
+  }).join('');
+  const interBadge = s.inter ? `<span class="inline-flex items-center gap-1 text-sm font-700 px-2.5 py-1 rounded-full bg-coral-tint text-coral-deep">🔔 Revisar interacción</span>` : '';
+  const starBadge = s.star ? `<span class="inline-flex items-center gap-1 text-sm font-700 px-2.5 py-1 rounded-full bg-gold-tint text-gold-deep">⭐ Clave por el omeprazol</span>` : '';
+  const ring = s.suggested ? 'border-2 border-dashed border-gold-soft' : (s.star ? 'border-2 border-gold-soft' : 'border border-black/5');
+  return `
+  <button onclick="openModal('${s.id}')" class="card-hover press text-left bg-paper ${ring} rounded-3xl p-5 shadow-sm floatUp" style="animation-delay:${idx*60}ms">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center justify-center w-16 h-16 rounded-2xl" style="background:${mainCat.tint}">${bottleSVG(mainCat.color, 48)}</div>
+      <span class="text-2xl" style="color:${mainCat.color}">›</span>
+    </div>
+    <h3 class="font-display font-600 text-2xl text-ink mt-4 leading-tight">${s.name}</h3>
+    <p class="text-inksoft font-600 mt-1">${s.brand}</p>
+    <div class="flex flex-wrap gap-1.5 mt-3">${starBadge}${tags}${interBadge}</div>
+    <div class="mt-4 inline-flex items-center gap-2 text-blue-deep font-700">Ver detalles <span aria-hidden="true">→</span></div>
+  </button>`;
+}
+
+/* ---------- Render de las cuadrículas ---------- */
+function render() {
+  const grid = document.getElementById('grid');
+  const next = document.getElementById('gridNext');
+  grid.innerHTML = SUPS.filter(s => !s.suggested).map((s,i) => cardHTML(s,i)).join('');
+  next.innerHTML = SUPS.filter(s => s.suggested).map((s,i) => cardHTML(s,i)).join('');
+}
+
+/* ---------- Filtro ---------- */
+function setFilter(f, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    b.classList.remove('tab-active'); b.classList.add('bg-white','text-ink');
+  });
+  if (btn) { btn.classList.add('tab-active'); btn.classList.remove('bg-white','text-ink'); }
+
+  const cards = document.querySelectorAll('#grid > button');
+  let visible = 0;
+  SUPS.filter(s => !s.suggested).forEach((s, i) => {
+    const el = cards[i];
+    let show = f === 'todos'
+      || (f === 'interacciones' ? s.inter : s.cats.includes(f));
+    el.style.display = show ? '' : 'none';
+    if (show) visible++;
+  });
+  document.getElementById('emptyMsg').classList.toggle('hidden', visible !== 0);
+
+  const total = SUPS.filter(s => !s.suggested).length;
+  const labels = { todos:'📋 Mostrando los ' + total, ojos:'👁️ Para los ojos', pulmones:'🫁 Para los pulmones', energia:'⚡ Para la energía', interacciones:'🔔 Para revisar interacción' };
+  const cnt = document.getElementById('filterCount');
+  cnt.textContent = (f === 'todos') ? labels.todos : (labels[f] + ': ' + visible + ' de ' + total);
+}
+
+/* ---------- Modal ---------- */
+let activeTab = 0;
+const TABS = [
+  { key:'benefits', label:'🌿 Beneficios' },
+  { key:'wow',      label:'✨ Dato fascinante' },
+  { key:'forMe',    label:'❤️ ¿Para qué me sirve?' },
+  { key:'evidence', label:'🔬 Evidencia' },
+  { key:'dosing',   label:'💊 Dosis' },
+  { key:'cautions', label:'⚠️ Precauciones' },
+];
+
+function openModal(id) {
+  const s = SUPS.find(x => x.id === id);
+  activeTab = 0;
+  const mainCat = CAT[s.cats[0]];
+  document.getElementById('modalBottle').innerHTML =
+    `<div class="flex items-center justify-center w-16 h-16 rounded-2xl" style="background:${mainCat.tint}">${bottleSVG(mainCat.color,48)}</div>`;
+  document.getElementById('modalBrand').textContent = s.brand;
+  document.getElementById('modalName').textContent = s.name;
+  document.getElementById('modalTags').innerHTML = s.cats.map(c => {
+    const k = CAT[c];
+    return `<span class="inline-flex items-center gap-1 text-sm font-700 px-2.5 py-1 rounded-full" style="background:${k.tint};color:${k.color}">${k.emoji} ${k.label}</span>`;
+  }).join('') + (s.star ? `<span class="inline-flex items-center gap-1 text-sm font-700 px-2.5 py-1 rounded-full bg-gold-tint text-gold-deep">⭐ Clave por el omeprazol</span>` : '') + (s.inter ? `<span class="inline-flex items-center gap-1 text-sm font-700 px-2.5 py-1 rounded-full bg-coral-tint text-coral-deep">🔔 Interacción</span>` : '');
+
+  document.getElementById('modalTabs').innerHTML = TABS.map((t,i) =>
+    `<button onclick="setTab(${i},'${id}')" data-tab="${i}" class="tabbtn press shrink-0 px-4 py-2.5 rounded-full font-700 text-base ${i===0?'tab-active':'bg-cream text-ink'}">${t.label}</button>`
+  ).join('');
+
+  renderTab(s);
+  const modal = document.getElementById('modal');
+  modal.classList.remove('hidden'); modal.classList.add('flex');
+  document.body.style.overflow = 'hidden';
+  window._lastFocus = document.activeElement;
+  const card = document.getElementById('modalCard');
+  card.scrollTop = 0;
+  card.focus();
+}
+
+function setTab(i, id) {
+  activeTab = i;
+  document.querySelectorAll('.tabbtn').forEach((b,idx) => {
+    b.classList.toggle('tab-active', idx===i);
+    b.classList.toggle('bg-cream', idx!==i);
+    b.classList.toggle('text-ink', idx!==i);
+  });
+  renderTab(SUPS.find(x => x.id === id));
+}
+
+function renderTab(s) {
+  const body = document.getElementById('modalBody');
+  const t = TABS[activeTab].key;
+  let html = '';
+  if (t === 'benefits') {
+    html = `<h4 class="font-display font-600 text-xl text-mint-deep mb-3">¿Qué hace por ti?</h4>
+      <ul class="space-y-3">${s.benefits.map(b => `<li class="flex gap-3"><span class="text-mint-deep text-xl shrink-0">✓</span><span>${b}</span></li>`).join('')}</ul>`;
+  } else if (t === 'forMe') {
+    html = `<div class="bg-coral-tint/60 rounded-2xl p-5"><h4 class="font-display font-600 text-xl text-coral-deep mb-2">Para ti, Papá</h4><p>${s.forMe}</p></div>`;
+  } else if (t === 'wow') {
+    html = `<div class="bg-gold-tint rounded-2xl p-5 border border-gold-soft/50">
+        <div class="flex items-center gap-2 mb-2"><span class="text-2xl">✨</span><h4 class="font-display font-600 text-xl text-gold-deep">Dato fascinante</h4></div>
+        <p>${s.wow}</p>
+      </div>`;
+  } else if (t === 'evidence') {
+    html = `<div class="bg-mint-tint rounded-2xl p-5">
+        <div class="flex items-center gap-3 mb-2">${dots(s.evDots)}<span class="font-700 text-mint-deep text-lg">Evidencia: ${s.evLevel}</span></div>
+        <p>${s.evText}</p>
+      </div>
+      <p class="text-base text-inksoft mt-4">Te explicamos esto con honestidad: "preliminar" significa prometedor pero todavía en estudio, y "sólida" significa bien respaldado.</p>`;
+  } else if (t === 'dosing') {
+    html = `<div class="bg-blue-tint rounded-2xl p-5"><h4 class="font-display font-600 text-xl text-blue-deep mb-2">Lo que estamos usando</h4><p class="text-xl font-600">${s.dosing}</p></div>
+      ${s.food ? `<div class="bg-mint-tint rounded-2xl p-5 mt-4"><div class="flex items-center gap-2 mb-1"><span class="text-2xl">🍳</span><h4 class="font-display font-600 text-lg text-mint-deep">Primero la comida</h4></div><p>${s.food}</p></div>` : ''}
+      <p class="text-base text-inksoft mt-4">Confirma siempre la dosis con tu doctor.</p>`;
+  } else if (t === 'cautions') {
+    html = `<h4 class="font-display font-600 text-xl text-coral-deep mb-3">Precauciones e interacciones</h4>
+      <ul class="space-y-3">${s.cautions.map(c => `<li class="flex gap-3"><span class="text-coral-deep text-xl shrink-0">!</span><span>${c}</span></li>`).join('')}</ul>`;
+  }
+  body.innerHTML = html;
+  body.classList.remove('tabReveal');
+  void body.offsetWidth; /* forza el reinicio de la animación */
+  body.classList.add('tabReveal');
+}
+
+function closeModal() {
+  const modal = document.getElementById('modal');
+  modal.classList.add('hidden'); modal.classList.remove('flex');
+  document.body.style.overflow = '';
+  if (window._lastFocus && typeof window._lastFocus.focus === 'function') window._lastFocus.focus();
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && !document.getElementById('modal').classList.contains('hidden')) closeModal();
+});
+
+/* ---------- Guardar como PDF (usa la impresión del navegador) ---------- */
+function guardarPDF() {
+  alert('Se abrirá la ventana de impresión con TODO el plan. En "Destino" elige "Guardar como PDF" y presiona Guardar.');
+  imprimirTodo();
+}
+
+/* ---------- Horario semanal (compartido: pantalla + impresión) ---------- */
+const SCHEDULE = [
+  { title:'Todos los días', when:'Con el desayuno o la comida principal', color:'#4E9E80', tint:'#E4F4EC',
+    items:['Vitamina K2 (con comida)','Astaxantina','MacuGuard, para los ojos (diario o cada dos días, hasta acabar el otro frasco de luteína/zeaxantina)','Ubiquinol','Zinc con cobre','NAC','Taurina','TUDCA','PQQ (en la mañana)'] },
+  { title:'Cada dos días', when:'Un día sí y al siguiente no, con comida', color:'#4E9E80', tint:'#E4F4EC',
+    items:['Vitamina D3 (con comida; la K2 sí es diaria)'] },
+  { title:'En la noche', when:'Ayuda a descansar', color:'#3E7E9C', tint:'#E5F0F6',
+    items:['Magnesio glicinato (para dormir)','Glicina 3 g (3 cápsulas, antes de dormir)','L-Theanine (si necesita calma)'] },
+  { title:'3 veces por semana', when:'Lunes, miércoles y viernes', color:'#B8893A', tint:'#FAF1DC',
+    items:['Methyl B-12 masticable 2500 mcg (en la mañana)','Boro 3 mg (con comida)'] },
+  { title:'1 vez por semana', when:'Por ejemplo el domingo', color:'#B8893A', tint:'#FAF1DC',
+    items:['Methyl Folato 400 mcg (junto con la B12)'] },
+  { title:'2 a 3 veces por semana', when:'En la comida', color:'#4E9E80', tint:'#E4F4EC',
+    items:['Hongos shiitake u ostra, para el Ergo (mejor que la pastilla)'] },
+  { title:'Para considerar más adelante', when:'Sin prisa, cuando lo demás esté asentado', color:'#7E9AA6', tint:'#EAF0F2',
+    items:['Semilla de uva (GSE), por sus capilares del ojo'] },
+];
+
+function renderSchedule() {
+  const el = document.getElementById('schedule');
+  const blocks = SCHEDULE.map(g => `
+    <div class="bg-paper border border-black/5 rounded-3xl p-5 shadow-sm">
+      <div class="inline-flex items-center px-3 py-1.5 rounded-full font-700 text-base mb-2" style="background:${g.tint};color:${g.color}">${g.title}</div>
+      <p class="text-inksoft mb-3">${g.when}</p>
+      <ul class="space-y-2">
+        ${g.items.map(i => `<li class="flex gap-2 text-lg"><span class="shrink-0" style="color:${g.color}">✓</span><span>${i}</span></li>`).join('')}
+      </ul>
+    </div>`).join('');
+  el.innerHTML = `
+    <div class="flex items-center gap-3 mb-1"><span class="text-2xl">🗓️</span><h2 class="font-display font-600 text-3xl text-ink">Horario simple de la semana</h2></div>
+    <p class="text-inksoft text-lg mb-2">Un vistazo rápido de qué tomar y cuándo. Ideal para pegar en el refri.</p>
+    <p class="text-coral-deep text-lg mb-5">🩺 Revisa este horario con tu doctor antes de seguirlo.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">${blocks}</div>`;
+}
+
+function schedulePrintHTML() {
+  return `
+    <h2 style="font-family:Fraunces,serif;font-size:22px;color:#3E7E9C;border-bottom:2px solid #8FD0B6;padding-bottom:4px;margin:6px 0 10px">🗓️ Horario simple de la semana</h2>
+    <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:12px">
+      ${SCHEDULE.map(g => `
+        <tr style="page-break-inside:avoid">
+          <td style="vertical-align:top;padding:7px 9px;border:1px solid #ccc;width:34%;background:${g.tint}"><b>${g.title}</b><br><span style="color:#5C6B72">${g.when}</span></td>
+          <td style="vertical-align:top;padding:7px 9px;border:1px solid #ccc">${g.items.join(', ')}</td>
+        </tr>`).join('')}
+    </table>`;
+}
+
+/* ---------- Hoja de impresión: SOLO EL HORARIO (para el refri) ---------- */
+function buildScheduleSheet() {
+  const sheet = document.getElementById('printSchedule');
+  sheet.innerHTML = `
+    <h1 style="font-family:Fraunces,serif;font-size:28px;color:#36474F;text-align:center;margin-bottom:2px">Horario de Papá ❤️</h1>
+    <p style="text-align:center;color:#5C6B72;margin-bottom:14px">Qué tomar y cuándo, de un vistazo</p>
+    ${schedulePrintHTML()}
+    <div style="background:#E4F4EC;border:1px solid #8FD0B6;border-radius:10px;padding:8px 12px;font-size:12px;margin-bottom:12px">
+      <b>🍳 Primero la comida:</b> hígado y yema (folato, B12), pescado y mariscos (omega 3, taurina, zinc), hojas verdes (magnesio), hongos cocidos (ergo) y sol (vitamina D). Los suplementos solo rellenan huecos.
+    </div>
+    <div style="background:#FBE9E5;border:1px solid #DB6A57;border-radius:10px;padding:8px 12px;font-size:12px;margin-bottom:8px">
+      <b>Recuerda:</b> esto no es una receta médica. Revisa este horario con tu doctor. Por el omeprazol, pídele revisar magnesio y B12. Evita el beta caroteno en pastilla de dosis alta.
+    </div>
+    <p style="text-align:center;font-size:12px;color:#7E9AA6;margin-top:12px">Hecho con cariño para Papá. No reemplaza la opinión de tu médico.</p>`;
+}
+
+/* ---------- Hoja de impresión: TODO expandido y ordenado ---------- */
+function buildFullSheet() {
+  const sheet = document.getElementById('printFull');
+  const section = (title, items) => `
+    <h2 style="font-family:Fraunces,serif;font-size:22px;color:#3E7E9C;border-bottom:2px solid #8FD0B6;padding-bottom:4px;margin:18px 0 10px">${title}</h2>
+    ${items.map(s => `
+      <div style="page-break-inside:avoid;border:1px solid #ddd;border-radius:10px;padding:12px 14px;margin-bottom:10px">
+        <div style="font-family:Fraunces,serif;font-size:18px;font-weight:600;color:#36474F">${s.star ? '⭐ ' : ''}${s.name} <span style="font-family:Nunito;font-size:13px;color:#5C6B72;font-weight:600">(${s.brand})</span></div>
+        <div style="font-size:14px;margin-top:6px"><b>Dosis:</b> ${s.dosing}</div>
+        ${s.food ? `<div style="font-size:14px;margin-top:4px"><b>🍳 En la comida:</b> ${s.food}</div>` : ''}
+        <div style="font-size:14px;margin-top:4px"><b>Para mí:</b> ${s.forMe}</div>
+        <div style="font-size:14px;margin-top:4px"><b>✨ Dato:</b> ${s.wow}</div>
+        <div style="font-size:14px;margin-top:4px"><b>Evidencia (${s.evDots}/4):</b> ${s.evLevel}. ${s.evText}</div>
+        <div style="font-size:14px;margin-top:4px"><b>Precauciones:</b> ${s.cautions.join(' ')}</div>
+      </div>`).join('')}`;
+  sheet.innerHTML = `
+    <h1 style="font-family:Fraunces,serif;font-size:30px;color:#36474F;text-align:center;margin-bottom:4px">Suplementos de Papá ❤️</h1>
+    <p style="text-align:center;color:#5C6B72;margin-bottom:14px">Mi plan claro y fácil</p>
+    <div style="background:#FBE9E5;border:1px solid #DB6A57;border-radius:10px;padding:10px 14px;font-size:13px;margin-bottom:14px">
+      <b>Importante:</b> esto es información resumida, no una receta médica. Consulta siempre primero con tu doctor.
+      Recuerda revisar magnesio y vitamina B12 por el omeprazol, y evitar el beta caroteno en pastilla de dosis alta por tu historial de fumador.
+    </div>
+    ${schedulePrintHTML()}
+    <div style="background:#E4F4EC;border:1px solid #8FD0B6;border-radius:10px;padding:8px 12px;font-size:12px;margin-bottom:14px">
+      <b>🍳 Primero la comida:</b> hígado y yema (folato, B12), pescado y mariscos (omega 3, taurina, zinc), hojas verdes (magnesio), hongos cocidos (ergo) y sol (vitamina D). Los suplementos solo rellenan huecos.
+    </div>
+    ${section('Detalle de cada suplemento', SUPS.filter(s => !s.suggested))}
+    ${section('Para considerar más adelante', SUPS.filter(s => s.suggested))}
+    <p style="text-align:center;font-size:12px;color:#7E9AA6;margin-top:16px">Hecho con cariño para Papá. No reemplaza la opinión de tu médico.</p>`;
+}
+
+/* ---------- Impresión: elegir horario o todo ---------- */
+function imprimirHorario() {
+  document.body.classList.remove('print-full');
+  window.print();
+}
+function imprimirTodo() {
+  document.body.classList.add('print-full');
+  window.print();
+}
+window.addEventListener('afterprint', () => document.body.classList.remove('print-full'));
+
+/* ---------- Arranque ---------- */
+render();
+renderSchedule();
+buildScheduleSheet();
+buildFullSheet();
+setFilter('todos', document.querySelector('.filter-btn'));
+</script>
+<div id="printDoctor" aria-hidden="true"></div><script id="upgrade-js">(function UPGRADE(){
+  'use strict';
+  var LSK='suplePapa';
+  // ---------- helpers ----------
+  function $(s,r){return (r||document).querySelector(s);}
+  function all(s,r){return [].slice.call((r||document).querySelectorAll(s));}
+  function today(){var d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+  function dow(){return new Date().getDay();} // 0 Dom .. 6 Sab
+
+  // ---------- CONTRAST AUTO-FIX ----------
+  function L(rgb){return rgb.map(function(v){v/=255;return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4);}).reduce(function(a,c,i){return a+[0.2126,0.7152,0.0722][i]*c;},0);}
+  function toRGB(c){var m=c.match(/[\d.]+/g);return m?m.slice(0,3).map(Number):[0,0,0];}
+  function ratio(fg,bg){var a=L(fg),b=L(bg);var hi=Math.max(a,b),lo=Math.min(a,b);return (hi+0.05)/(lo+0.05);}
+  function rgb2hsl(r,g,b){r/=255;g/=255;b/=255;var mx=Math.max(r,g,b),mn=Math.min(r,g,b),h,s,l=(mx+mn)/2;if(mx===mn){h=s=0;}else{var d=mx-mn;s=l>0.5?d/(2-mx-mn):d/(mx+mn);switch(mx){case r:h=(g-b)/d+(g<b?6:0);break;case g:h=(b-r)/d+2;break;default:h=(r-g)/d+4;}h/=6;}return [h,s,l];}
+  function hsl2rgb(h,s,l){var r,g,b;if(s===0){r=g=b=l;}else{function q2(p,q,t){if(t<0)t+=1;if(t>1)t-=1;if(t<1/6)return p+(q-p)*6*t;if(t<1/2)return q;if(t<2/3)return p+(q-p)*(2/3-t)*6;return p;}var q=l<0.5?l*(1+s):l+s-l*s,p=2*l-q;r=q2(p,q,h+1/3);g=q2(p,q,h);b=q2(p,q,h-1/3);}return [Math.round(r*255),Math.round(g*255),Math.round(b*255)];}
+  function effBg(el){var p=el;while(p){var bg=getComputedStyle(p).backgroundColor;if(bg&&bg!=='rgba(0, 0, 0, 0)'&&bg!=='transparent')return toRGB(bg);p=p.parentElement;}return [251,248,241];}
+  function fixContrast(root){
+    var els=all('p,li,span,a,button,h1,h2,h3,h4,small,strong,em,div',root||document);
+    els.forEach(function(el){
+      if(el.closest('#hoyView, #printDoctor'))return; // our own blocks are built pre-contrasted
+      if(!el.textContent||!el.textContent.trim())return;
+      if(el.children.length>2)return; // container, skip
+      var cs=getComputedStyle(el); if(cs.display==='none'||el.offsetParent===null && cs.position!=='fixed')return;
+      var fg=toRGB(cs.color), bg=effBg(el);
+      var fs=parseFloat(cs.fontSize), bold=(parseInt(cs.fontWeight)||400)>=700;
+      var need=(fs>=24||(fs>=18.66&&bold))?3.0:4.5;
+      if(ratio(fg,bg)>=need)return;
+      var hsl=rgb2hsl(fg[0],fg[1],fg[2]);
+      for(var i=0;i<40;i++){var c=hsl2rgb(hsl[0],hsl[1],Math.max(0,hsl[2]));if(ratio(c,bg)>=need){el.style.setProperty('color','rgb('+c[0]+','+c[1]+','+c[2]+')','important');break;}hsl[2]-=0.025;if(hsl[2]<=0){el.style.setProperty('color','rgb(30,25,20)','important');break;}}
+    });
+  }
+
+  // ---------- FONT SIZE TOGGLE (zoom on content + modal) ----------
+  var ZOOMS=[1,1.15,1.3];
+  function applyZoom(){var z=ZOOMS[+(localStorage.getItem(LSK+'-fs')||0)]||1;['#app','#modal'].forEach(function(s){var e=$(s);if(e)e.style.zoom=z;});}
+  function buildFontCtl(){
+    if($('#fsCtl'))return;
+    var b=document.createElement('div');b.id='fsCtl';
+    b.innerHTML='<button data-fs="0" title="Normal">A</button><button data-fs="1" title="Grande">A+</button><button data-fs="2" title="Muy grande">A++</button>';
+    document.body.appendChild(b);
+    all('#fsCtl button').forEach(function(btn){btn.onclick=function(){localStorage.setItem(LSK+'-fs',btn.getAttribute('data-fs'));all('#fsCtl button').forEach(function(x){x.classList.remove('on');});btn.classList.add('on');applyZoom();};});
+    var cur=+(localStorage.getItem(LSK+'-fs')||0);var act=$('#fsCtl button[data-fs="'+cur+'"]');if(act)act.classList.add('on');
+    applyZoom();
+  }
+
+  // ---------- READ ALOUD ----------
+  var speaking=false;
+  function pickVoice(){var vs=speechSynthesis.getVoices();return vs.filter(function(v){return /es[-_]MX/i.test(v.lang);})[0]||vs.filter(function(v){return /^es/i.test(v.lang);})[0]||null;}
+  function speak(txt,btn){
+    try{speechSynthesis.cancel();}catch(e){}
+    if(speaking){speaking=false;if(btn)btn.innerHTML='🔊 Escuchar';return;}
+    var u=new SpeechSynthesisUtterance(txt);u.lang='es-MX';u.rate=0.92;var v=pickVoice();if(v)u.voice=v;
+    u.onend=function(){speaking=false;if(btn)btn.innerHTML='🔊 Escuchar';};
+    speaking=true;if(btn)btn.innerHTML='⏹️ Detener';speechSynthesis.speak(u);
+  }
+  function injectModalTTS(){
+    var m=$('#modal');if(!m)return;var panel=m.firstElementChild||m;
+    if($('#ttsBtn',m))return;
+    var btn=document.createElement('button');btn.id='ttsBtn';btn.type='button';btn.innerHTML='🔊 Escuchar';
+    btn.onclick=function(){var t=(m.innerText||'').replace(/✕|🔊 Escuchar|⏹️ Detener/g,'').replace(/\s+/g,' ').trim();speak(t,btn);};
+    (panel).appendChild(btn);
+  }
+
+  // ---------- DATA for HOY + DOCTOR ----------
+  var DIARIO=[
+    ['k2','Vitamina K2','Arterias y huesos'],
+    ['astax','Astaxantina','Ojos y antioxidante'],
+    ['macuguard','MacuGuard','Salud de la mácula (ojos)'],
+    ['ubi','Ubiquinol','Energía y corazón'],
+    ['zinc','Zinc con cobre','Defensas y ojos'],
+    ['nac','NAC','Apoyo a los pulmones'],
+    ['taurina','Taurina','Corazón y energía'],
+    ['tudca','TUDCA','Apoyo al hígado y la bilis'],
+    ['pqq','PQQ','Energía de las células']
+  ];
+  var CADA2=[['d3','Vitamina D3','Defensas, huesos y pulmón (la K2 sí es diaria)']];
+  var NOCHE=[
+    ['mag','Magnesio glicinato','Ayuda a dormir; repone lo que baja el omeprazol'],
+    ['glicina','Glicina 3 g (3 cápsulas)','Ayuda a dormir'],
+    ['theanine','L-Theanine','Calma, si la necesita']
+  ];
+  // special items with the weekdays they apply (0=Dom..6=Sab)
+  var ESPECIAL=[
+    ['b12','Methyl B-12 masticable 2500 mcg','Repone la B12 (clave por el omeprazol)',[1,3,5],'Lun, Mié y Vie (mañana)'],
+    ['boro','Boro 3 mg','Huesos y hormonal',[1,3,5],'Lun, Mié y Vie (con comida)'],
+    ['folato','Methyl Folato 400 mcg','Va junto con la B12',[0],'Domingo'],
+    ['ergo','Hongos (shiitake u ostra)','Ergo: antioxidante de la longevidad',[2,4,6],'2 a 3 veces por semana, en la comida']
+  ];
+  var DOCTOR=[
+    ['Vitamina K2 (MK-7)','Según etiqueta','Diario, con comida','Huesos y arterias. Revisar si toma anticoagulante (warfarina).'],
+    ['Astaxantina','12 mg','Diario, con comida','Antioxidante; salud de ojos y piel.'],
+    ['MacuGuard (luteína/zeaxantina + azafrán + astax)','Según etiqueta','Diario o cada 2 días','Salud de la mácula. Contiene 1.24 mg de alfa-caroteno.'],
+    ['Ubiquinol (CoQ10)','Según etiqueta','Diario, con comida','Energía celular y corazón; útil con estatinas.'],
+    ['Zinc con cobre','Según etiqueta','Diario, con comida','Defensas y ojos; el cobre evita el desbalance por zinc.'],
+    ['NAC (N-acetil cisteína)','600 mg','Diario','Apoyo respiratorio y antioxidante (EPOC).'],
+    ['Taurina','1000 mg','Diario','Corazón, músculo y energía.'],
+    ['TUDCA','250 mg','Diario','Apoyo al hígado y la bilis.'],
+    ['PQQ','20 mg','Diario, en la mañana','Energía mitocondrial.'],
+    ['Vitamina D3','5000 UI (125 mcg)','Cada 2 días, con comida','Inmunidad, huesos y pulmón.'],
+    ['Magnesio glicinato','Según etiqueta','Noche','Sueño; posible déficit por omeprazol prolongado.'],
+    ['Glicina','3 g (3 cápsulas)','Noche','Sueño.'],
+    ['L-Theanine','Según etiqueta','Noche, si hay ansiedad','Calma.'],
+    ['Methyl B-12 (metilcobalamina)','2500 mcg','3 x semana (L, M, V), mañana','Reposición de B12 por omeprazol prolongado.'],
+    ['Methyl Folato','400 mcg','1 x semana (domingo), con la B12','Metilación; se toma junto a la B12, no solo.'],
+    ['Boro','3 mg','3 x semana, con comida','Huesos y hormonal.'],
+    ['Ergotioneína (hongos cocidos)','Dieta 2-3 x semana','En la comida','Antioxidante de la longevidad.'],
+    ['Extracto de semilla de uva (GSE)','A considerar','Consultar antes','Capilares del ojo. Revisar con anticoagulante.']
+  ];
+
+  // ---------- HOY VIEW ----------
+  function hoyKey(){return LSK+'-hoy-'+today();}
+  function getChecks(){try{return JSON.parse(localStorage.getItem(hoyKey())||'[]');}catch(e){return [];}}
+  function setChecks(a){localStorage.setItem(hoyKey(),JSON.stringify(a));}
+  function rowHTML(id,name,why,badge){
+    return '<label class="hoyRow" data-id="'+id+'"><span class="hoyCk" aria-hidden="true"></span>'+
+      '<span class="hoyTxt"><span class="hoyName">'+name+'</span><span class="hoyWhy">'+why+'</span></span>'+
+      (badge?'<span class="hoyBadge">'+badge+'</span>':'')+'</label>';
+  }
+  function groupHTML(title,sub,items){
+    var rows=items.map(function(it){return rowHTML(it[0],it[1],it[2]);}).join('');
+    return '<div class="hoyGroup"><div class="hoyGT">'+title+'</div>'+(sub?'<div class="hoyGS">'+sub+'</div>':'')+rows+'</div>';
+  }
+  function buildHoy(){
+    if($('#hoyView'))return;
+    var d=dow();
+    var espHoy=ESPECIAL.filter(function(e){return e[3].indexOf(d)>=0;});
+    var espRows=espHoy.length? espHoy.map(function(e){return rowHTML(e[0],e[1],e[2],'Hoy toca');}).join('')
+      : '<div class="hoyNone">Hoy no toca ninguno de los de días especiales. 👍</div>';
+    var espAll=ESPECIAL.map(function(e){return '<li><b>'+e[1]+'</b>: '+e[4]+'</li>';}).join('');
+    var host=document.createElement('section');host.id='hoyView';
+    host.innerHTML=
+      '<div class="hoyHead"><div><div class="hoyKicker">MI DÍA DE HOY</div>'+
+      '<h2 class="hoyTitle">Lo que me toca hoy</h2></div>'+
+      '<button id="hoyReset" type="button">Reiniciar</button></div>'+
+      '<div class="hoyProg"><div class="hoyBar"><span id="hoyBarFill"></span></div><div id="hoyCount"></div></div>'+
+      groupHTML('☀️ Con el desayuno o la comida principal','Todos los días',DIARIO)+
+      groupHTML('🔆 Cada dos días (con comida)','Un día sí y el otro no',CADA2)+
+      '<div class="hoyGroup"><div class="hoyGT">📅 Días especiales</div><div class="hoyGS">Lo que toca según el día</div>'+espRows+'</div>'+
+      groupHTML('🌙 En la noche','Para descansar',NOCHE)+
+      '<details class="hoyCal"><summary>Ver el calendario completo de la semana</summary><ul>'+espAll+'</ul></details>';
+    // mount before schedule
+    var app=$('#app')||document.body;
+    var anchor=null; all('#app > *').forEach(function(c){if(!anchor&&/Horario simple/.test(c.textContent))anchor=c;});
+    if(anchor)app.insertBefore(host,anchor); else app.insertBefore(host,app.children[1]||null);
+    // wire
+    var checks=getChecks();
+    all('#hoyView .hoyRow').forEach(function(r){
+      if(checks.indexOf(r.getAttribute('data-id'))>=0)r.classList.add('done');
+      r.addEventListener('click',function(e){e.preventDefault();r.classList.toggle('done');var c=getChecks();var id=r.getAttribute('data-id');var i=c.indexOf(id);if(r.classList.contains('done')){if(i<0)c.push(id);}else{if(i>=0)c.splice(i,1);}setChecks(c);updProg();});
+    });
+    $('#hoyReset').onclick=function(){setChecks([]);all('#hoyView .hoyRow').forEach(function(r){r.classList.remove('done');});updProg();};
+    updProg();
+    function updProg(){var tot=all('#hoyView .hoyRow').length;var don=all('#hoyView .hoyRow.done').length;$('#hoyCount').textContent=don+' de '+tot+' hecho';var f=$('#hoyBarFill');if(f)f.style.width=(tot?Math.round(don/tot*100):0)+'%';}
+    window.__updProg=updProg;
+  }
+
+  // ---------- DOCTOR PRINT ----------
+  function buildDoctor(){
+    var box=$('#printDoctor');if(!box)return;
+    var rows=DOCTOR.map(function(r){return '<tr><td>'+r[0]+'</td><td>'+r[1]+'</td><td>'+r[2]+'</td><td>'+r[3]+'</td></tr>';}).join('');
+    box.innerHTML='<h1>Lista de suplementos</h1><p class="pdSub">Paciente: Papá &nbsp;·&nbsp; Fecha: ____________ &nbsp;·&nbsp; Para revisión médica</p>'+
+      '<p class="pdNote">Notas relevantes: uso prolongado de omeprazol (revisar B12 y magnesio en sangre); antecedente de tabaquismo (evitar beta-caroteno en dosis alta); EPOC etapa 3; desprendimiento de retina reparado. Confirmar interacciones si toma anticoagulante o aspirina.</p>'+
+      '<table><thead><tr><th>Suplemento</th><th>Dosis</th><th>Frecuencia</th><th>Motivo</th></tr></thead><tbody>'+rows+'</tbody></table>'+
+      '<p class="pdFoot">Documento informativo, no es una receta médica.</p>';
+  }
+  function printDoctor(){document.body.classList.add('print-doctor');window.print();}
+  function afterP(){document.body.classList.remove('print-doctor');}
+  window.addEventListener('afterprint',afterP);
+
+  function addDoctorBtn(){
+    if($('#docBtn'))return;
+    var ref=all('button,a').filter(function(b){return /Imprimir todo/i.test(b.textContent);})[0];
+    var b=document.createElement('button');b.id='docBtn';b.type='button';b.className=(ref?ref.className:'')+' upg-docbtn';b.innerHTML='🩺 Imprimir para el doctor';
+    b.onclick=printDoctor;
+    if(ref&&ref.parentNode){ref.parentNode.insertBefore(b,ref.nextSibling);} else {document.body.appendChild(b);}
+  }
+
+  // ---------- WRAP openModal for TTS + zoom + contrast ----------
+  if(typeof window.openModal==='function'){var _om=window.openModal;window.openModal=function(){var r=_om.apply(this,arguments);setTimeout(function(){applyZoom();injectModalTTS();fixContrast($('#modal'));},60);return r;};}
+  if(typeof window.closeModal==='function'){var _cm=window.closeModal;window.closeModal=function(){try{speechSynthesis.cancel();}catch(e){}speaking=false;return _cm.apply(this,arguments);};}
+  if(typeof window.setFilter==='function'){var _sf=window.setFilter;window.setFilter=function(){var r=_sf.apply(this,arguments);setTimeout(function(){fixContrast();},50);return r;};}
+
+  // ---------- SERVICE WORKER (optional, only if sw.js present) ----------
+  if('serviceWorker' in navigator){try{navigator.serviceWorker.register('sw.js').catch(function(){});}catch(e){}}
+
+  // ---------- INIT ----------
+  function init(){try{buildFontCtl();}catch(e){} try{buildHoy();}catch(e){} try{buildDoctor();}catch(e){} try{addDoctorBtn();}catch(e){} try{fixContrast();}catch(e){}}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+  if('speechSynthesis' in window){speechSynthesis.onvoiceschanged=function(){};}
+})();</script>
+</body>
+</html>
